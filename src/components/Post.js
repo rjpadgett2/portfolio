@@ -24,15 +24,15 @@ export function Post() {
 
 
     return (
-        <main className="bg-green-100 min-h-screen p-12">
+        <main className="bg-gray-900 min-h-screen p-12">
             <section className="container mx-auto">
-                <h1 className="text-5xl flex justify-center cursive">Blog Post Page</h1>
-                <h2 className="text-lg text-gray-600 flex justify-center mb-12">Welcome to my Blog post page</h2>
+                <h1 className="text-5xl flex text-yellow-400 justify-center cursive">Blog Post Page</h1>
+                <h2 className="text-lg text-yellow-400 flex justify-center mb-12">Welcome to my Blog post page</h2>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {postData && postData.map((post, index) => (
                     <article>
                         <Link to={"/post/" + post.slug.current} key={post.slug.current}>
-                            <span className="block h-64 relative rounded shadow leading-snug bg-white border-lg-8 border-green-400"
+                            <span className="block h-64 relative rounded shadow leading-snug bg-white border-lg-8 border-yellow-400"
                                     key={index}>
                                 <img
                                     src={post.mainImage.asset.url}
@@ -40,7 +40,7 @@ export function Post() {
                                     className="w-full h-full rounded-r object-cover absolute"
                                 />
                                 <span className="block relative h-full flex justify-end items-end pr-4 pb-4">
-                                    <h3 className="text-gray-800 text-lg font-blog px-3 py-4 bg-red-700 text-red-100 bg-opacity-75 rounded">
+                                    <h3 className="text-gray-800 text-lg font-blog px-3 py-4 bg-yellow-400 text-blue-900 bg-opacity-75 rounded">
                                         {post.title}
                                     </h3>
                                 </span>
