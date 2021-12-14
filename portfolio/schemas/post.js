@@ -9,6 +9,10 @@ export default {
       type: 'string',
     },
     {
+      name: "date",
+      type: "datetime",
+    },
+    {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
@@ -16,12 +20,6 @@ export default {
         source: 'title',
         maxLength: 96,
       },
-    },
-    {
-      name: 'author',
-      title: 'Author',
-      type: 'reference',
-      to: {type: 'author'},
     },
     {
       name: 'mainImage',

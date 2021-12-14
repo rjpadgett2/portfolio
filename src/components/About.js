@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import sanityClient from "../client";
 import imageUrlBuilder from "@sanity/image-url";
-import image from "../scales.jpeg";
+import image from "../blocks.jpeg";
 import BlockContent from "@sanity/block-content-to-react";
 
 const builder = imageUrlBuilder(sanityClient);
@@ -31,7 +31,7 @@ export function About() {
         <main className="relative">
             <img src={image} alt="scales" className="absolute w-full"/>
             <div className="p-10 lg:pt-48 container mx-auto relative">
-                <section className="bg-yellow-600 rounded-lg shadow-2xl lg:flex p-20">
+                <section className="bg-gray-500 rounded-lg shadow-2xl lg:flex p-20">
                     {/*<img*/}
                     {/*    src={urlFor(author.authorImage).url()}*/}
                     {/*     className="rounded w-32 h-32 lg:w-64 lg:h-64 mr-8"*/}
