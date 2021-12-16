@@ -12,10 +12,6 @@ export default {
             type: "datetime",
         },
         {
-            name: "place",
-            type: "string",
-        },
-        {
             name: "description",
             type: "text",
         },
@@ -31,7 +27,11 @@ export default {
             }
         },
         {
-            name: "link",
+            name: "githubLink",
+            type: "url",
+        },
+        {
+            name: "appLink",
             type: "url",
         },
         {

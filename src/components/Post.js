@@ -10,7 +10,7 @@ export function Post() {
         sanityClient.fetch(`*[_type == "post"]{
                 title,
                 slug,
-                date,
+                startDate,
                 mainImage{
                     asset->{
                         _id,
@@ -28,9 +28,9 @@ export function Post() {
         <main className="bg-gray-200 min-h-screen p-12">
             <section className="container mx-auto">
                 <h1 className="text-5xl flex text-indigo-900 justify-center cursive">Work History</h1>
-                <h2 className="text-lg text-indigo-900 flex justify-center mb-12">Welcome to my Blog post page</h2>
+                <h2 className="text-lg text-indigo-900 flex justify-center mb-12">This page displays all professional work and projects</h2>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {postData && postData.map((post, index) => (
+                    {postData && postData.sort((a,b) => new Date(a.startDate) < new Date(b.startDate) ? 1 : -1).map((post, index) => (
                     <article>
                         <Link to={"/post/" + post.slug.current} key={post.slug.current}>
                             <span className="block h-64 relative rounded shadow leading-snug bg-white border-lg-8 border-yellow-400"

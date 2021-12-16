@@ -9,7 +9,13 @@ export default {
       type: 'string',
     },
     {
-      name: "date",
+      name: "startDate",
+      title: "Start Date",
+      type: "datetime",
+    },
+    {
+      name: "endDate",
+      title: "End Date",
       type: "datetime",
     },
     {
@@ -30,28 +36,32 @@ export default {
       },
     },
     {
-      name: 'publishedAt',
-      title: 'Published at',
-      type: 'datetime',
-    },
-    {
       name: 'body',
       title: 'Body',
       type: 'blockContent',
     },
   ],
-
+  orderings: [
+    {
+      title: 'Start Date',
+      name: 'startDateDesc',
+      by: [
+        {field: 'startDate', direction: 'asc'}
+      ]
+    }
+  ],
   preview: {
     select: {
       title: 'title',
       author: 'author.name',
       media: 'mainImage',
     },
-    prepare(selection) {
-      const {author} = selection
-      return Object.assign({}, selection, {
-        subtitle: author && `by ${author}`,
-      })
+    prepare(selection, viewOptions = {}) {
+      const title = viewOptions.ordering && viewOptions.ordering.name === 'startDateDesc'
+          ? `${selection.title}`
+          : selection.title
+
+      return {title: title}
     },
   },
 }
